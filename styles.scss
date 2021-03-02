@@ -1,0 +1,151 @@
+$fonte : sans-serif;
+$cor-fundo : #ffffe6;
+$cor_h : #888e30;
+$cor_passeio : white;
+$cor_card : white;
+$cor_botao : #888e30;
+$cor_textarea : #f8f8f8;
+
+@function smargin(){
+	@return 15px;
+}
+
+#cabecalho{
+    margin-left: 20px + 10px;
+}
+
+body{
+    font-family: $fonte;
+    background-color: $cor-fundo;
+}
+
+hr{
+    border-style: dotted;
+    margin-left: smargin();
+    margin-right: smargin();
+}
+
+h1{
+    color: $cor_h;
+}
+
+h3{
+    color: $cor_h;
+    margin-left: smargin();
+}
+
+h4{
+    margin-left: smargin();
+}
+
+img{
+    width: 300px - 100px;
+	height:200px;
+	margin-bottom: smargin();
+	margin-left: smargin();
+	margin-right: 10px;
+	border-style: groove;
+}
+
+#menu{
+	display: block;
+	width:25%;
+	float:right;
+	border-style: groove;
+	margin-top: smargin();
+	
+}
+@mixin cartao{
+	display: block;
+	float:left;
+	width: 70%;
+	border-style: groove;
+	margin-top: smargin();
+    margin-right: 10px;
+   	margin-bottom: 25px;
+    margin-left: 35px;
+	background-color: $cor_card;
+}
+
+#passeio{
+	@include cartao;
+	p{
+		font-size:18px;
+		margin-right: smargin();
+		text-align: justify;
+	}
+}
+
+#museu{
+	@extend #passeio;
+}
+
+
+#mercado{
+	@extend #passeio;
+}
+
+#contato{
+	margin-left: 30px;
+}
+
+#sobre{
+	margin-left: 30px;
+	margin-right: 30px;
+	p{
+		font-size:18px;
+		margin-right: smargin();
+		text-align: justify;
+	}
+}
+
+input[type=text], select{
+	width: 70%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	
+}
+
+input[type=submit]{
+	width: 70%;
+	background-color: $cor_botao;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	hover{
+		background-color: $cor_botao;
+	}	
+}
+
+textarea{
+	width: 70%;
+	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: $cor_textarea;
+	resize: none;
+	font-family: $fonte;
+}
+
+.topnav{
+	text-align: center;
+	a{
+		font-size: large;
+		padding: 5px;
+		text-decoration: none;
+		color: $cor_h;
+	}
+}
+
+.listinha{
+	font-size: 18px;
+}
